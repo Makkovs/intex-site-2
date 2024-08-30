@@ -1,0 +1,21 @@
+.wrapper {
+    padding: 20px 20px;
+
+    .galery {
+        display: flex;
+    }
+
+    .otherImages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .otherImage {
+            width: 200px;
+        }
+    }
+
+    .image {
+        width: 600px;
+    }
+}

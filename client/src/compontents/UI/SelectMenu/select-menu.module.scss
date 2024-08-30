@@ -1,0 +1,75 @@
+@import "../../../variables.scss";
+
+.list {
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    position: relative;
+
+    .modal {
+        width: 200px;
+        visibility: hidden;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &::after {
+        content: "";
+        border: solid black;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-bottom: 2px;
+        margin-left: 4px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transition: rotate 0.2s;
+    }
+
+    &:hover {
+        &::after {
+            rotate: 180deg;
+        }
+
+        .modal {
+            visibility: visible;
+            padding: 5px 5px;
+            background: $bg-color;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+            margin-top: 6px;
+
+            &::after,
+            &::before {
+                content: "";
+                border: solid transparent;
+                position: absolute;
+                left: calc(50% - .5rem);
+                bottom: 100%;
+            }
+
+            &::after {
+                border-bottom-color: $bg-color;
+                border-width: 8px;
+            }
+
+            &::before {
+                border-bottom-color: $border-color;
+                border-width: 9px;
+                margin-left: -1px;
+            }
+
+            .option {
+                cursor: pointer;
+                padding: 5px;
+                border-radius: 5px;
+
+                &:hover {
+                    background: #e0e0e0;
+                }
+            }
+        }
+    }
+}
