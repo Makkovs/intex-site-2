@@ -1,0 +1,51 @@
+.added_wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .added_button {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        background: #f0f0f0;
+        border-radius: 15px;
+
+        .piece {
+            cursor: pointer;
+            padding: 10px 20px;
+            user-select: none;
+            -webkit-user-select: none;
+            border-radius: 15px;
+
+            &:hover {
+                background: #d4d4d4;
+            }
+        }
+
+        .added {
+            text-align: center;
+            width: 140px;
+        }
+    }
+
+    .added_input {
+        margin-top: 10px;
+        font-size: 18px;
+        width: 50px;
+    }
+}
+
+.add_button {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 60px;
+    border: 0px;
+    border-radius: 15px;
+    background: #f0f0f0;
+
+    &:hover {
+        background: #d4d4d4;
+    }
+}

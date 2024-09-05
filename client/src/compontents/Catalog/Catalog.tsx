@@ -1,7 +1,9 @@
-import styles from "./catalog.module.scss";
+import { FC } from "react";
 import Commodity from "./Commodity/Commodity";
 
-const Catalog = () => {
+import styles from "./catalog.module.scss";
+
+const Catalog:FC = () => {
 
     return (
         <div className={styles.catalog}>

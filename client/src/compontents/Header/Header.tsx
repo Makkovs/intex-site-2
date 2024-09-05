@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import SelectMenu from "../UI/SelectMenu/SelectMenu";
-
 import search from "../../assets/search-icon.svg";
+
 import styles from "./header.module.scss";
 
-const Header = () => {
+const Header: FC = () => {
 
     const [selectedSort, setSelectedSort] = useState<string | null>(null);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
