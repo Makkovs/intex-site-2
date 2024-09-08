@@ -1,0 +1,24 @@
+@import "../../variables.scss";
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 5vh 20vw;
+
+    .info {
+        margin-right: 20px;
+
+        .login {
+            margin: 10px 0px 10px 0px;
+            padding: 20px;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+        }
+    }
+
+    .verif {
+        padding: 20px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+    }
+}

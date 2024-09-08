@@ -121,7 +121,6 @@ const CommodityDescription: FC = () => {
                             Doloribus blanditiis sint excepturi, omnis temporibus eum provident nemo assumenda?
                         </p>
                     </div>
-
                 </div>
             }
         </div>

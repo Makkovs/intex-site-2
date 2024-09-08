@@ -3,11 +3,13 @@ import SelectMenu from "../UI/SelectMenu/SelectMenu";
 import search from "../../assets/search-icon.svg";
 
 import styles from "./header.module.scss";
+import BasketModal from "../BasketModal/BasketModal";
 
 const Header: FC = () => {
 
     const [selectedSort, setSelectedSort] = useState<string | null>(null);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [visible, setVisible] = useState<boolean>(false);
 
     return (
         <header className={styles.header}>
@@ -34,9 +36,10 @@ const Header: FC = () => {
             <div className={styles.button}>
                 Підтримка
             </div>
-            <div className={styles.button}>
+            <div className={styles.button} onClick={() => setVisible(true)}>
                 Кошик
             </div>
+            <BasketModal visible={visible} setVisible={setVisible} />
         </header>
     )
 }

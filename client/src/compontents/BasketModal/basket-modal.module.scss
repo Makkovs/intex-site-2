@@ -1,0 +1,26 @@
+@import "../../variables.scss";
+
+.title {
+    margin-bottom: 15px;
+}
+
+.button {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    margin-left: auto;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-top: 10px;
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background: #f0f0f0;
+
+    &:hover {
+        background: #d4d4d4;
+    }
+}
