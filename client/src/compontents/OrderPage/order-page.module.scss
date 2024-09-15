@@ -9,10 +9,121 @@
         margin-right: 20px;
 
         .login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             margin: 10px 0px 10px 0px;
             padding: 20px;
             border: 1px solid $border-color;
             border-radius: 5px;
+
+            .input_name {
+                width: 330px;
+                font-size: 13px;
+                text-align: left;
+                color: #585858;
+            }
+
+            .phone_wrapper {
+                display: flex;
+                align-items: center;
+                border: 1px solid $border-color;
+                border-radius: 5px;
+
+                .ukr_phone {
+                    font-size: 18px;
+                    font-family: Arial, sans-serif;
+                    padding-left: 10px;
+                }
+
+                .number_input {
+                    width: 287px;
+                    border: none;
+                    padding-left: 3px;
+                    font-family: Arial, sans-serif;
+                }
+            }
+
+            .input {
+                width: 320px;
+                font-size: 18px;
+                padding: 8px 10px;
+                border-radius: 5px;
+                border: 1px solid $border-color;
+            }
+
+            .submit {
+                cursor: pointer;
+                color: #ffffff;
+                width: 340px;
+                padding: 8px 10px;
+                font-size: 18px;
+                border-radius: 5px;
+                border: none;
+                margin-top: 10px;
+                background: #0f9753;
+
+                &:hover {
+                    background: #1ac971;
+                }
+            }
+
+            .another_type {
+                cursor: pointer;
+                margin-top: 20px;
+                color: #2250b4;
+
+                &:hover {
+                    color: #306cec;
+                }
+            }
+        }
+    }
+
+    .delivery {
+        .input_radio {
+            display: none;
+
+            &:checked + .new_radio_container > .new_radio > .new_radio_center {
+                display: block;
+            }
+
+            &:checked + .new_radio_container {
+                border: 1px solid $border-color;
+            }
+        }
+
+        .new_radio_container {
+            margin-top: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+
+            .new_radio {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                width: 15px;
+                height: 15px;
+                border: 1px solid $border-color;
+                border-radius: 50%;
+                margin-right: 10px;
+
+                .new_radio_center {
+                    display: none;
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 50%;
+                    background: #494949;
+                }
+            }
         }
     }
 
@@ -20,5 +131,13 @@
         padding: 20px;
         border: 1px solid $border-color;
         border-radius: 5px;
+
+        .verif_title {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
     }
 }
