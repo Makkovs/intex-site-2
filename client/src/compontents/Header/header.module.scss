@@ -4,11 +4,15 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 20px 15vw 20px 12vw;
+    padding: 20px 12vw 20px 12vw;
     border-bottom: 1px solid $border-color;
 
     .logo {
         user-select: none;
+        font-size: 30px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #000000;
     }
 
     .button {
@@ -27,12 +31,76 @@
             font-size: 16px;
             border: 0px;
             border-radius: 10px;
-
         }
 
         .searchIcon {
             cursor: pointer;
             width: 18px;
         }
+    }
+
+    .burger_checkbox {
+        display: none;
+    }
+
+    .burger_menu {
+        .burger_line {
+            width: 30px;
+            height: 3px;
+            background: #000000;
+            margin-bottom: 6px;
+        }
+    }
+
+    .burger_body {
+        display: none;
+        align-items: center;
+        flex-direction: column;
+        justify-content: right;
+
+        .body_select {
+            display: flex;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .burger_menu {
+        display: inline-block;
+    }
+
+    .burger_checkbox {
+        &:checked+.burger_menu+.burger_body {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .button_main {
+        display: none;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .burger_menu {
+        display: none;
+    }
+
+    .burger_body {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 355px) {
+    .burger_menu {
+        margin-top: 10px;
     }
 }

@@ -34,8 +34,9 @@
 
     .another_commodity {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         padding: 20px 0px;
-
     }
 
     .characteristics {
@@ -54,7 +55,6 @@
         padding: 20px 0px;
 
         .commentary {
-            width: 100%;
             padding: 10px 10px 15px 10px;
             border: 1px solid $border-color;
             margin-top: 10px;

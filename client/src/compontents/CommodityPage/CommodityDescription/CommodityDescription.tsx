@@ -61,7 +61,6 @@ const CommodityDescription: FC = () => {
                     <Commodity smallVersion={true} />
                     <Commodity smallVersion={true} />
                     <Commodity smallVersion={true} />
-                    <Commodity smallVersion={true} />
                 </div>
             }
             {selectedMenuOption === menuPages.CHARACTERISTICS &&

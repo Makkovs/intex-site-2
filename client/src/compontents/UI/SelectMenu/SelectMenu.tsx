@@ -29,6 +29,7 @@ const SelectMenu: FC<SelectMenuProps> = ({ className, name, selectedOption, setS
                     <li
                         className={styles.option}
                         onClick={() => setSelectedOption(option)}
+                        key={`${option}#selectMenu`}
                     >
                         {option}
                     </li>
