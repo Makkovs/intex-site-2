@@ -19,6 +19,10 @@
         cursor: pointer;
     }
 
+    .button_img {
+        width: 40px;
+    }
+
     .search {
         display: flex;
         align-items: center;
@@ -58,8 +62,10 @@
         flex-direction: column;
         justify-content: right;
 
-        .body_select {
+        .body_group {
             display: flex;
+            justify-content: space-around;
+            width: 100%;
         }
     }
 }

@@ -3,8 +3,10 @@ import { NavLink } from "react-router-dom";
 import SelectMenu from "../UI/SelectMenu/SelectMenu";
 import search from "../../assets/search-icon.svg";
 import BasketModal from "../BasketModal/BasketModal";
+import AuthModal from "../AuthModal/AuthModal";
 
 import { HOME_ROUTE } from "../../utils/paths";
+import userIcon from "../../assets/user.png";
 
 import styles from "./header.module.scss";
 
@@ -12,7 +14,8 @@ const Header: FC = () => {
 
     const [selectedSort, setSelectedSort] = useState<string | null>(null);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-    const [visible, setVisible] = useState<boolean>(false);
+    const [basketVisible, setBasketVisible] = useState<boolean>(false);
+    const [authVisible, setAuthVisible] = useState<boolean>(false);
 
     return (
         <header className={styles.header}>
@@ -34,17 +37,26 @@ const Header: FC = () => {
                 setSelectedOption={setSelectedCategory}
             />
             <div className={styles.search}>
-                <input className={styles.input} type="text" placeholder="Пошук" />
+                <input
+                    className={styles.input}
+                    type="text"
+                    placeholder="Пошук"
+                />
                 <img className={styles.searchIcon} src={search} />
             </div>
-            <input className={styles.burger_checkbox} type="checkbox" name="burger-check" id="burger" />
+            <input
+                className={styles.burger_checkbox}
+                type="checkbox"
+                name="burger-check"
+                id="burger"
+            />
             <label className={styles.burger_menu} htmlFor="burger">
                 <div className={styles.burger_line}></div>
                 <div className={styles.burger_line}></div>
                 <div className={styles.burger_line}></div>
             </label>
             <div className={styles.burger_body}>
-                <div className={styles.body_select}>
+                <div className={styles.body_group}>
                     <SelectMenu
                         className={styles.button}
                         name="Сортування"
@@ -60,14 +72,26 @@ const Header: FC = () => {
                         setSelectedOption={setSelectedCategory}
                     />
                 </div>
-                <div className={styles.button} onClick={() => setVisible(true)}>
-                    Кошик
+                <div className={styles.body_group}>
+                    <div className={styles.button} onClick={() => setBasketVisible(true)}>
+                        Кошик
+                    </div>
+                    <div className={styles.button} onClick={() => setAuthVisible(true)}>
+                        Аккаунт
+                    </div>
                 </div>
             </div>
-            <div className={[styles.button, styles.button_main].join(" ")} onClick={() => setVisible(true)}>
+            <div className={[styles.button, styles.button_main].join(" ")} onClick={() => setBasketVisible(true)}>
                 Кошик
             </div>
-            <BasketModal visible={visible} setVisible={setVisible} />
+            <img
+                className={[styles.button, styles.button_main, styles.button_img].join(" ")}
+                src={userIcon}
+                alt="account"
+                onClick={() => setAuthVisible(true)}
+            />
+            <BasketModal visible={basketVisible} setVisible={setBasketVisible} />
+            <AuthModal visible={authVisible} setVisible={setAuthVisible} />
         </header>
     )
 }

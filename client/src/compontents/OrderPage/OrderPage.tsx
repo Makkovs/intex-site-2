@@ -1,56 +1,21 @@
-import { useState } from "react";
-import styles from "./order-page.module.scss";
 import BasketCommodity from "../BasketModal/BasketCommodity/BasketCommodity";
+
+import styles from "./order-page.module.scss";
 
 const OrderPage = () => {
 
-    const [isNumber, setIsNumber] = useState<boolean>(true);
-
     return (
         <div className={styles.wrapper}>
-            <div className={styles.info}>
-                <h2>Оформлення замовлення</h2>
-                <h3>Виконайти вхід для замовлення</h3>
-                <div className={styles.login}>
-                    {isNumber
-                        ?
-                        <>
-                            <span className={styles.input_name}>
-                                Телефон
-                            </span>
-                            <div className={styles.phone_wrapper}>
-                                <div className={styles.ukr_phone}>
-                                    +38
-                                </div>
-                                <input
-                                    className={[styles.input, styles.number_input].join(" ")}
-                                    type="text"
-                                />
-                            </div>
-
-                        </>
-                        :
-                        <>
-                            <span className={styles.input_name}>
-                                Пошта
-                            </span>
-                            <input
-                                className={styles.input}
-                                type="text"
-                            />
-                        </>
-                    }
-
-                    <button className={styles.submit}>
-                        Продовжити
-                    </button>
-                    <span
-                        className={styles.another_type}
-                        onClick={() => setIsNumber(!isNumber)}
-                    >
-                        Увійти через пошту
-                    </span>
+            <div className={styles.verif}>
+                <h3>Оформлення замовлення</h3>
+                <div className={styles.verif_title}>
+                    <h3>Всього</h3>
+                    <h3>2000грн</h3>
                 </div>
+                <BasketCommodity />
+                <BasketCommodity />
+            </div>
+            <div className={styles.info}>                
                 <div className={styles.delivery}>
                     <h3>Доставка</h3>
                     <input
@@ -78,14 +43,6 @@ const OrderPage = () => {
                         Доставка УкрПоштою
                     </label>
                 </div>
-            </div>
-            <div className={styles.verif}>
-                <div className={styles.verif_title}>
-                    <h3>Всього</h3>
-                    <h2>2000грн</h2>
-                </div>
-                <BasketCommodity />
-                <BasketCommodity />
             </div>
         </div>
     );
