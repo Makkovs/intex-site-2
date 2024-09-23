@@ -1,11 +1,26 @@
+import { useEffect, useState } from "react";
+import { RootState } from "../../store";
+import { useSelector } from "react-redux";
+
+import AuthModal from "../AuthModal/AuthModal";
 import BasketCommodity from "../BasketModal/BasketCommodity/BasketCommodity";
 
 import styles from "./order-page.module.scss";
 
 const OrderPage = () => {
 
+    const user = useSelector((state: RootState) => state.user);
+    const [authVisible, setAuthVisible] = useState(false);
+
+    useEffect(() => {
+        if (!user.isAuth) {
+            setAuthVisible(true);
+        }
+    }, [user, authVisible]);
+
     return (
         <div className={styles.wrapper}>
+            <AuthModal visible={authVisible} setVisible={setAuthVisible} />
             <div className={styles.verif}>
                 <h3>Оформлення замовлення</h3>
                 <div className={styles.verif_title}>
@@ -15,7 +30,7 @@ const OrderPage = () => {
                 <BasketCommodity />
                 <BasketCommodity />
             </div>
-            <div className={styles.info}>                
+            <div className={styles.info}>
                 <div className={styles.delivery}>
                     <h3>Доставка</h3>
                     <input

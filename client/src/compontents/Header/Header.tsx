@@ -1,14 +1,18 @@
 import { FC, useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import SelectMenu from "../UI/SelectMenu/SelectMenu";
-import search from "../../assets/search-icon.svg";
 import BasketModal from "../BasketModal/BasketModal";
 import AuthModal from "../AuthModal/AuthModal";
 
+import { RootState } from "../../store";
+import { useSelector } from "react-redux";
 import { HOME_ROUTE } from "../../utils/paths";
-import userIcon from "../../assets/user.png";
 
 import styles from "./header.module.scss";
+import userIcon from "../../assets/user.png";
+import search from "../../assets/search-icon.svg";
+
 
 const Header: FC = () => {
 
@@ -16,6 +20,8 @@ const Header: FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [basketVisible, setBasketVisible] = useState<boolean>(false);
     const [authVisible, setAuthVisible] = useState<boolean>(false);
+
+    const user = useSelector((state: RootState) => state.user);
 
     return (
         <header className={styles.header}>
@@ -76,7 +82,10 @@ const Header: FC = () => {
                     <div className={styles.button} onClick={() => setBasketVisible(true)}>
                         Кошик
                     </div>
-                    <div className={styles.button} onClick={() => setAuthVisible(true)}>
+                    <div
+                        className={styles.button}
+                        onClick={() => { if (!user.isAuth) setAuthVisible(true) }}
+                    >
                         Аккаунт
                     </div>
                 </div>
@@ -84,12 +93,20 @@ const Header: FC = () => {
             <div className={[styles.button, styles.button_main].join(" ")} onClick={() => setBasketVisible(true)}>
                 Кошик
             </div>
-            <img
-                className={[styles.button, styles.button_main, styles.button_img].join(" ")}
-                src={userIcon}
-                alt="account"
-                onClick={() => setAuthVisible(true)}
-            />
+            <div className={styles.auth_info}>
+                <img
+                    className={[styles.button, styles.button_main, styles.button_img].join(" ")}
+                    src={userIcon}
+                    alt="account"
+                    onClick={() => { if (!user.isAuth) setAuthVisible(true) }}
+                />
+                {user.isAuth &&
+                    <div className={styles.authorized_window}>
+                        Ввійдено як: {user.phoneNumber ? user.phoneNumber : user.email} <br />
+                        <a href="">Вийти</a>
+                    </div>
+                }
+            </div>
             <BasketModal visible={basketVisible} setVisible={setBasketVisible} />
             <AuthModal visible={authVisible} setVisible={setAuthVisible} />
         </header>
