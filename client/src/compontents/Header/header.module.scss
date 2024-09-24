@@ -23,6 +23,30 @@
         position: relative;
     }
 
+    .mobile_auth {
+        position: relative;
+
+        .mobile_auth_checkbox {
+            display: none;
+
+            &:checked + .button + .mobile_auth_window {
+                display: block;
+            }
+        }
+
+        .mobile_auth_window {
+            display: none;
+            position: absolute;
+            top: 110%;
+            right: -100%;
+            background-color: #ffffff;
+            border: 1px solid $border-color;
+            border-radius: 15px;
+            padding: 10px 15px;
+            line-height: 1.6;
+        }
+    }
+
     .authorized_window {
         display: none;
         position: absolute;

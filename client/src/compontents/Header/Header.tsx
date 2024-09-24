@@ -82,11 +82,24 @@ const Header: FC = () => {
                     <div className={styles.button} onClick={() => setBasketVisible(true)}>
                         Кошик
                     </div>
-                    <div
-                        className={styles.button}
-                        onClick={() => { if (!user.isAuth) setAuthVisible(true) }}
-                    >
-                        Аккаунт
+                    <div className={styles.mobile_auth}>
+                        <input 
+                            className={styles.mobile_auth_checkbox} 
+                            type="checkbox" 
+                            name="mobile_auth" 
+                            id="mobile_auth" 
+                        />
+                        <label
+                            className={styles.button}
+                            onClick={() => { if (!user.isAuth) setAuthVisible(true) }}
+                            htmlFor="mobile_auth"
+                        >
+                            Аккаунт
+                        </label>
+                        <div className={styles.mobile_auth_window}>
+                            Ввійдено як: {user.phoneNumber ? user.phoneNumber : user.email} <br />
+                            <a href="">Вийти</a>
+                        </div>
                     </div>
                 </div>
             </div>
