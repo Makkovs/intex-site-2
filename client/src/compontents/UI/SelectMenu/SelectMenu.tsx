@@ -5,7 +5,7 @@ interface SelectMenuProps {
     className?: string;
     name: string;
     selectedOption: string | null;
-    setSelectedOption: (state: string | null) => void;
+    setSelectedOption: (state: string | null) => any;
     options: string[];
 }
 
