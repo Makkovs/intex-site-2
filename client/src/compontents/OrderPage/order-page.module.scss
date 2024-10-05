@@ -1,108 +1,108 @@
 @import "../../variables.scss";
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 5vw;
+
+  .verif {
     display: flex;
     flex-direction: column;
-    padding: 40px 5vw;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
 
-    .verif {
+    .verif_title {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .info {
+    margin-top: 10px;
+  }
+
+  .delivery {
+    .input_radio {
+      display: none;
+
+      &:checked+.new_radio_container>.new_radio>.new_radio_center {
+        display: block;
+      }
+
+      &:checked+.new_radio_container {
+        border: 1px solid $border-color;
+      }
+    }
+
+    .new_radio_container {
+      margin-top: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-radius: 10px;
+
+      .new_radio {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px;
+        position: relative;
+        width: 15px;
+        height: 15px;
         border: 1px solid $border-color;
-        border-radius: 5px;
+        border-radius: 50%;
+        margin-right: 10px;
 
-        .verif_title {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            border-bottom: 1px solid $border-color;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+        .new_radio_center {
+          display: none;
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background: #494949;
         }
+      }
     }
-
-    .info {
-        margin-top: 10px;
-    }
-
-    .delivery {
-        .input_radio {
-            display: none;
-
-            &:checked + .new_radio_container > .new_radio > .new_radio_center {
-                display: block;
-            }
-
-            &:checked + .new_radio_container {
-                border: 1px solid $border-color;
-            }
-        }
-
-        .new_radio_container {
-            margin-top: 10px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
-
-            .new_radio {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                width: 15px;
-                height: 15px;
-                border: 1px solid $border-color;
-                border-radius: 50%;
-                margin-right: 10px;
-
-                .new_radio_center {
-                    display: none;
-                    position: absolute;
-                    top: 3px;
-                    left: 3px;
-                    width: 9px;
-                    height: 9px;
-                    border-radius: 50%;
-                    background: #494949;
-                }
-            }
-        }
-    }
+  }
 }
 
-@media screen and (min-width: 450px){
-    .phone_wrapper {
-        width: 337px;
-    }
+@media screen and (min-width: 450px) {
+  .phone_wrapper {
+    width: 337px;
+  }
 
-    .input {
-        width: 320px;
-    }
+  .input {
+    width: 320px;
+  }
 
-    .submit {
-        width: 340px;
-    }
+  .submit {
+    width: 340px;
+  }
 }
 
 @media screen and (max-width: 450px) {
-    .phone_wrapper {
-        width: 237px;
-    }
+  .phone_wrapper {
+    width: 237px;
+  }
 
-    .number_input {
-        max-width: 183px;
-    }
+  .number_input {
+    max-width: 183px;
+  }
 
-    .input_name {
-        margin-left:  100px;
-    }
+  .input_name {
+    margin-left: 100px;
+  }
 
-    .submit {
-        width: 280;
-    }
+  .submit {
+    width: 280;
+  }
 }

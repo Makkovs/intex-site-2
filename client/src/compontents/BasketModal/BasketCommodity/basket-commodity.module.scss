@@ -1,69 +1,69 @@
 @import "../../../variables.scss";
 
 .commodity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  padding: 10px;
+  max-width: 2000px;
+  border-bottom: 1px solid $border-color;
+
+  .info {
+    font-weight: 500;
+  }
+
+  .button_wrapper {
+    margin-left: 15px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80vw;
-    padding: 10px;
-    max-width: 2000px;
-    border-bottom: 1px solid $border-color;
 
-    .info {
-        font-weight: 500;
+    .button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-width: 40px;
+      min-height: 40px;
+      border-radius: 50%;
+      margin: 0px 10px 0px 10px;
+      font-size: 20px;
+      user-select: none;
+      -webkit-user-select: none;
+
+      &:hover {
+        color: #929292;
+      }
     }
 
-    .button_wrapper {
-        margin-left: 15px;
-        display: flex;
-
-        .button {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-width: 40px;
-            min-height: 40px;
-            border-radius: 50%;
-            margin: 0px 10px 0px 10px;
-            font-size: 20px;
-            user-select: none;
-            -webkit-user-select: none;
-
-            &:hover {
-                color: #929292;
-            }
-        }
-
-        .input {
-            text-align: center;
-            border-radius: 10px;
-            border: 1px solid black;
-        }
+    .input {
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid black;
     }
+  }
 }
 
 @media screen and (min-width: 700px) {
-    .commodity_img {
-        height: 100px;
-        width: 100px;
-    }
+  .commodity_img {
+    height: 100px;
+    width: 100px;
+  }
 
-    .input {
-        font-size: 20px;
-        width: 50px;
-    }
+  .input {
+    font-size: 20px;
+    width: 50px;
+  }
 }
 
 @media screen and (max-width: 700px) {
-    .commodity_img {
-        height: 70px;
-        width: 70px;
-    }
+  .commodity_img {
+    height: 70px;
+    width: 70px;
+  }
 
-    .input {
-        font-size: 16px;
-        width: 30px;
-    }
+  .input {
+    font-size: 16px;
+    width: 30px;
+  }
 }

@@ -10,24 +10,24 @@ import Header from "./compontents/Header/Header";
 
 const App = () => {
 
-    const user = useSelector((state: RootState) => state.user);
-    const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        const newUser: User = {
-            isAuth: true,
-            email: "testmail@gmail.com",
-            phoneNumber: null
-        };
-        dispatch(setUser(newUser));
-    }, [])
+  useEffect(() => {
+    const newUser: User = {
+      isAuth: true,
+      email: "testmail@gmail.com",
+      phoneNumber: null
+    };
+    dispatch(setUser(newUser));
+  }, [])
 
-    return (
-        <BrowserRouter>
-            <Header />
-            <AppRouter />
-        </BrowserRouter>
-    )
+  return (
+    <BrowserRouter>
+      <Header />
+      <AppRouter />
+    </BrowserRouter>
+  )
 }
 
 export default App;

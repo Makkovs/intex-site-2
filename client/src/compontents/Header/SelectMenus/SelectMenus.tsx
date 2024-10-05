@@ -8,32 +8,32 @@ import SelectMenu from "../../UI/SelectMenu/SelectMenu";
 import styles from "../header.module.scss";
 
 interface SelectMenusProps {
-    className?: string;
+  className?: string;
 }
 
-const SelectMenus:FC<SelectMenusProps> = ({className}) => {
+const SelectMenus: FC<SelectMenusProps> = ({ className }) => {
 
-    const dispatch = useDispatch();
-    const filters = useSelector((state: RootState) => state.filter);
+  const dispatch = useDispatch();
+  const filters = useSelector((state: RootState) => state.filter);
 
-    return (
-        <>
-            <SelectMenu
-                className={[styles.button, styles.button_main, className].join(" ")}
-                name="Сортування"
-                selectedOption={filters.sort}
-                setSelectedOption={(state: string | null) => dispatch(setSort(state))}
-                options={["Популярні", "Дорожчі", "Дешевші", "Рейтинг"]}
-            />
-            <SelectMenu
-                className={[styles.button, styles.button_main, className].join(" ")}
-                name="Категорії"
-                options={["Канцелярія", "Ігри", "Зошити"]}
-                selectedOption={filters.category}
-                setSelectedOption={(state: string | null) => dispatch(setCategory(state))}
-            />
-        </>
-    );
+  return (
+    <>
+      <SelectMenu
+        className={[styles.button, styles.button_main, className].join(" ")}
+        name="Сортування"
+        selectedOption={filters.sort}
+        setSelectedOption={(state: string | null) => dispatch(setSort(state))}
+        options={["Популярні", "Дорожчі", "Дешевші", "Рейтинг"]}
+      />
+      <SelectMenu
+        className={[styles.button, styles.button_main, className].join(" ")}
+        name="Категорії"
+        options={["Канцелярія", "Ігри", "Зошити"]}
+        selectedOption={filters.category}
+        setSelectedOption={(state: string | null) => dispatch(setCategory(state))}
+      />
+    </>
+  );
 }
 
 export default SelectMenus;

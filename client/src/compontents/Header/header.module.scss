@@ -1,164 +1,164 @@
 @import "../../variables.scss";
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 12vw 20px 12vw;
+  border-bottom: 1px solid $border-color;
+
+  .logo {
+    user-select: none;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .button {
+    cursor: pointer;
+  }
+
+  .auth_info {
+    position: relative;
+  }
+
+  .mobile_auth {
+    position: relative;
+
+    .mobile_auth_checkbox {
+      display: none;
+
+      &:checked+.button+.mobile_auth_window {
+        display: block;
+      }
+    }
+
+    .mobile_auth_window {
+      display: none;
+      position: absolute;
+      top: 110%;
+      right: -100%;
+      background-color: #ffffff;
+      border: 1px solid $border-color;
+      border-radius: 15px;
+      padding: 10px 15px;
+      line-height: 1.6;
+    }
+  }
+
+  .authorized_window {
+    display: none;
+    position: absolute;
+    top: 75%;
+    left: 85%;
+    border: 1px solid $border-color;
+    background-color: #ffffff;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 10px;
+    line-height: 1.2;
+
+    &:hover {
+      display: block;
+    }
+  }
+
+  .button_img {
+    cursor: pointer;
+    width: 40px;
+
+    &:hover {
+      +.authorized_window {
+        display: block;
+      }
+    }
+  }
+
+  .search {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 20px 12vw 20px 12vw;
-    border-bottom: 1px solid $border-color;
+    padding: 0px 10px 0px 2px;
+    border: 2px solid black;
+    border-radius: 10px;
 
-    .logo {
-        user-select: none;
-        font-size: 30px;
-        font-weight: 700;
-        text-decoration: none;
-        color: #000000;
+    .input {
+      padding: 5px;
+      font-size: 16px;
+      border: 0px;
+      border-radius: 10px;
     }
 
-    .button {
-        cursor: pointer;
+    .searchIcon {
+      cursor: pointer;
+      width: 18px;
     }
+  }
 
-    .auth_info {
-        position: relative;
+  .burger_checkbox {
+    display: none;
+  }
+
+  .burger_menu {
+    .burger_line {
+      width: 30px;
+      height: 3px;
+      background: #000000;
+      margin-bottom: 6px;
     }
+  }
 
-    .mobile_auth {
-        position: relative;
+  .burger_body {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: right;
 
-        .mobile_auth_checkbox {
-            display: none;
-
-            &:checked + .button + .mobile_auth_window {
-                display: block;
-            }
-        }
-
-        .mobile_auth_window {
-            display: none;
-            position: absolute;
-            top: 110%;
-            right: -100%;
-            background-color: #ffffff;
-            border: 1px solid $border-color;
-            border-radius: 15px;
-            padding: 10px 15px;
-            line-height: 1.6;
-        }
+    .body_group {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
     }
-
-    .authorized_window {
-        display: none;
-        position: absolute;
-        top: 75%;
-        left: 85%;
-        border: 1px solid $border-color;
-        background-color: #ffffff;
-        padding: 8px 15px;
-        font-size: 14px;
-        border-radius: 10px;
-        line-height: 1.2;
-
-        &:hover {
-            display: block;
-        }
-    }
-
-    .button_img {
-        cursor: pointer;
-        width: 40px;
-
-        &:hover {
-            +.authorized_window {
-                display: block;
-            }
-        }
-    }
-
-    .search {
-        display: flex;
-        align-items: center;
-        padding: 0px 10px 0px 2px;
-        border: 2px solid black;
-        border-radius: 10px;
-
-        .input {
-            padding: 5px;
-            font-size: 16px;
-            border: 0px;
-            border-radius: 10px;
-        }
-
-        .searchIcon {
-            cursor: pointer;
-            width: 18px;
-        }
-    }
-
-    .burger_checkbox {
-        display: none;
-    }
-
-    .burger_menu {
-        .burger_line {
-            width: 30px;
-            height: 3px;
-            background: #000000;
-            margin-bottom: 6px;
-        }
-    }
-
-    .burger_body {
-        display: none;
-        align-items: center;
-        flex-direction: column;
-        justify-content: right;
-
-        .body_group {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 1050px) {
-    .burger_menu {
-        display: inline-block;
-    }
+  .burger_menu {
+    display: inline-block;
+  }
 
-    .burger_checkbox {
-        &:checked+.burger_menu+.burger_body {
-            display: flex;
-            flex-direction: column;
-        }
+  .burger_checkbox {
+    &:checked+.burger_menu+.burger_body {
+      display: flex;
+      flex-direction: column;
     }
+  }
 
-    .button_main {
-        display: none;
-    }
+  .button_main {
+    display: none;
+  }
 
-    .logo {
-        margin-bottom: 10px;
-    }
+  .logo {
+    margin-bottom: 10px;
+  }
 
-    .header {
-        flex-wrap: wrap;
-    }
+  .header {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (min-width: 1050px) {
-    .burger_menu {
-        display: none;
-    }
+  .burger_menu {
+    display: none;
+  }
 
-    .burger_body {
-        display: none;
-    }
+  .burger_body {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 355px) {
-    .burger_menu {
-        margin-top: 10px;
-    }
+  .burger_menu {
+    margin-top: 10px;
+  }
 }

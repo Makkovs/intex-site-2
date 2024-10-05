@@ -1,70 +1,70 @@
 @import "../../variables.scss";
 
 .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px 0px;
+
+  .input_name {
+    width: 330px;
+    font-size: 13px;
+    text-align: left;
+    color: #585858;
+  }
+
+  .phone_wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 15px 0px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
 
-    .input_name {
-        width: 330px;
-        font-size: 13px;
-        text-align: left;
-        color: #585858;
+    .ukr_phone {
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      padding-left: 10px;
     }
 
-    .phone_wrapper {
-        display: flex;
-        align-items: center;
-        border: 1px solid $border-color;
-        border-radius: 5px;
-
-        .ukr_phone {
-            font-size: 18px;
-            font-family: Arial, sans-serif;
-            padding-left: 10px;
-        }
-
-        .number_input {
-            border: none;
-            padding-left: 3px;
-            font-family: Arial, sans-serif;
-            width: 280px;
-        }
+    .number_input {
+      border: none;
+      padding-left: 3px;
+      font-family: Arial, sans-serif;
+      width: 280px;
     }
+  }
 
-    .input {
-        font-size: 18px;
-        padding: 8px 10px;
-        border-radius: 5px;
-        border: 1px solid $border-color;
-        width: 310px;
+  .input {
+    font-size: 18px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+    width: 310px;
+  }
+
+  .submit {
+    cursor: pointer;
+    color: #ffffff;
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    background: #0f9753;
+    width: 250px;
+
+    &:hover {
+      background: #1ac971;
     }
+  }
 
-    .submit {
-        cursor: pointer;
-        color: #ffffff;
-        padding: 8px 10px;
-        font-size: 18px;
-        border-radius: 5px;
-        border: none;
-        margin-top: 10px;
-        background: #0f9753;
-        width: 250px;
+  .another_type {
+    cursor: pointer;
+    margin-top: 20px;
+    color: #2250b4;
 
-        &:hover {
-            background: #1ac971;
-        }
+    &:hover {
+      color: #306cec;
     }
-
-    .another_type {
-        cursor: pointer;
-        margin-top: 20px;
-        color: #2250b4;
-
-        &:hover {
-            color: #306cec;
-        }
-    }
+  }
 }

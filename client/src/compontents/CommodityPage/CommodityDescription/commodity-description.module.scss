@@ -1,81 +1,81 @@
 @import "../../../variables.scss";
 
 .description {
-    margin-top: 50px;
+  margin-top: 50px;
 
-    .menu {
+  .menu {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+
+    .menu_button_radio {
+      display: none;
+
+      &:checked+.menu_button {
+        border-bottom: 2px solid #303030;
+        margin-bottom: 0px;
+      }
+    }
+
+    .menu_button {
+      cursor: pointer;
+      margin-right: 20px;
+      margin-bottom: 2px;
+      padding: 10px;
+      user-select: none;
+      -webkit-user-select: none;
+
+      &:hover {
+        border-bottom: 2px solid #303030;
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  .another_commodity {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0px;
+  }
+
+  .characteristics {
+    tr {
+      display: block;
+      margin-top: 10px;
+    }
+
+    th {
+      text-align: left;
+      width: 500px;
+    }
+  }
+
+  .commentaries {
+    padding: 20px 0px;
+
+    .commentary {
+      padding: 10px 10px 15px 10px;
+      border: 1px solid $border-color;
+      margin-top: 10px;
+
+      .author {
         display: flex;
         align-items: center;
-        border-bottom: 1px solid $border-color;
 
-        .menu_button_radio {
-            display: none;
-
-            &:checked+.menu_button {
-                border-bottom: 2px solid #303030;
-                margin-bottom: 0px;
-            }
+        .avatar {
+          width: 30px;
         }
 
-        .menu_button {
-            cursor: pointer;
-            margin-right: 20px;
-            margin-bottom: 2px;
-            padding: 10px;
-            user-select: none;
-            -webkit-user-select: none;
-
-            &:hover {
-                border-bottom: 2px solid #303030;
-                margin-bottom: 0px;
-            }
+        .author_name {
+          margin: 0px 10px;
         }
+      }
+
+      .comment_body {
+        display: inline-block;
+        padding: 10px 0px 0px 30px;
+      }
     }
-
-    .another_commodity {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 20px 0px;
-    }
-
-    .characteristics {
-        tr {
-            display: block;
-            margin-top: 10px;
-        }
-
-        th {
-            text-align: left;
-            width: 500px;
-        }
-    }
-
-    .commentaries {
-        padding: 20px 0px;
-
-        .commentary {
-            padding: 10px 10px 15px 10px;
-            border: 1px solid $border-color;
-            margin-top: 10px;
-
-            .author {
-                display: flex;
-                align-items: center;
-
-                .avatar {
-                    width: 30px;
-                }
-
-                .author_name {
-                    margin: 0px 10px;
-                }
-            }
-
-            .comment_body {
-                display: inline-block;
-                padding: 10px 0px 0px 30px;
-            }
-        }
-    }
+  }
 }

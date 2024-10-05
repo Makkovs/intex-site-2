@@ -1,51 +1,51 @@
 .commodity {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0px 30px;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    background: rgb(233, 233, 233);
+  }
+
+  .image {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+
+  .smallImage {
+    width: 250px;
+    height: 250px;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .add {
     cursor: pointer;
     display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 0px 30px;
-    text-decoration: none;
-    color: black;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    width: 45px;
+    height: 45px;
 
     &:hover {
-        background: rgb(233, 233, 233);
+      background: #ffffff;
     }
 
-    .image {
-        width: 300px;
-        height: 300px;
-        margin-bottom: 10px;
+    img {
+      width: 25px;
+      height: 25px;
     }
-
-    .smallImage {
-        width: 250px;
-        height: 250px;
-    }
-
-    .info {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .add {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-
-        width: 45px;
-        height: 45px;
-
-        &:hover {
-            background: #ffffff;
-        }
-
-        img {
-            width: 25px;
-            height: 25px;
-        }
-    }
+  }
 }

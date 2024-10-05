@@ -1,55 +1,55 @@
 .added_wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .added_button {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
+    font-size: 18px;
+    background: #f0f0f0;
+    border-radius: 15px;
 
-    .added_button {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 18px;
-        background: #f0f0f0;
-        border-radius: 15px;
+    .piece {
+      cursor: pointer;
+      padding: 10px 20px;
+      user-select: none;
+      -webkit-user-select: none;
+      border-radius: 15px;
 
-        .piece {
-            cursor: pointer;
-            padding: 10px 20px;
-            user-select: none;
-            -webkit-user-select: none;
-            border-radius: 15px;
-
-            &:hover {
-                background: #d4d4d4;
-            }
-        }
-
-        .added {
-            text-align: center;
-            width: 140px;
-        }
+      &:hover {
+        background: #d4d4d4;
+      }
     }
 
-    .added_input {
-        margin-top: 10px;
-        font-size: 18px;
-        width: 50px;
+    .added {
+      text-align: center;
+      width: 140px;
     }
+  }
+
+  .added_input {
+    margin-top: 10px;
+    font-size: 18px;
+    width: 50px;
+  }
 }
 
 .add_button {
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    text-align: center;
-    font-size: 18px;
-    padding: 10px 0px;
-    border: 0px;
-    border-radius: 15px;
-    background: #f0f0f0;
-    max-width: 283px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0px;
+  border: 0px;
+  border-radius: 15px;
+  background: #f0f0f0;
+  max-width: 283px;
 
-    &:hover {
-        background: #d4d4d4;
-    }
+  &:hover {
+    background: #d4d4d4;
+  }
 }

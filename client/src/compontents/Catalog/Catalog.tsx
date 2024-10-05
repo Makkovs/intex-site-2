@@ -3,21 +3,21 @@ import Commodity from "./Commodity/Commodity";
 
 import styles from "./catalog.module.scss";
 
-const Catalog:FC = () => {
+const Catalog: FC = () => {
 
-    return (
-        <div className={styles.catalog}>
-            <Commodity />
-            <Commodity />
-            <Commodity />
-            <Commodity />
-            <Commodity />
-            <Commodity />
-            <Commodity />
-            <Commodity />
-            <Commodity />
-        </div>
-    )
+  return (
+    <div className={styles.catalog}>
+      <Commodity />
+      <Commodity />
+      <Commodity />
+      <Commodity />
+      <Commodity />
+      <Commodity />
+      <Commodity />
+      <Commodity />
+      <Commodity />
+    </div>
+  )
 }
 
 export default Catalog;
